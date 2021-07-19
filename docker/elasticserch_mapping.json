@@ -1,0 +1,9 @@
+{
+  "mappings": {
+    "properties": {
+      "titulo": { "type": "text" },  
+      "descricao":  { "type": "text"  }, 
+      "url":   { "type": "keyword"  }     
+    }
+  }
+}

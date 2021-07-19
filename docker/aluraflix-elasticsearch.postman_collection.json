@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "a1c4d36a-aa7b-4879-9f22-4301ce9ecca8",
+		"name": "AluraFlix - Elasticsearch",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Índice",
+			"item": [
+				{
+					"name": "Cria índice",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"mappings\": {\n    \"properties\": {\n      \"titulo\": { \"type\": \"text\" },  \n      \"descricao\":  { \"type\": \"text\"  }, \n      \"url\":   { \"type\": \"keyword\"  }     \n    }\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9200/videos",
+							"host": [
+								"localhost"
+							],
+							"port": "9200",
+							"path": [
+								"videos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Descreve índice",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9200/videos",
+							"host": [
+								"localhost"
+							],
+							"port": "9200",
+							"path": [
+								"videos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Registros",
+			"item": [
+				{
+					"name": "Cria registro",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"titulo\": \"Rick Astley - Never Gonna Give You Up (Official Music Video)\",\n    \"descricao\": \"Rick Astley - Never Gonna Give You Up (Official Music Video)\",\n    \"url\": \"https://www.youtube.com/watch?v=dQw4w9WgXcQ\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9200/videos/_doc/1",
+							"host": [
+								"localhost"
+							],
+							"port": "9200",
+							"path": [
+								"videos",
+								"_doc",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pegar registro",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9200/videos/_doc/1",
+							"host": [
+								"localhost"
+							],
+							"port": "9200",
+							"path": [
+								"videos",
+								"_doc",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pesquisar registros",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"query\": {\n        \"match\": {\n            \"titulo\": \"Rick\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9200/videos/_search",
+							"host": [
+								"localhost"
+							],
+							"port": "9200",
+							"path": [
+								"videos",
+								"_search"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

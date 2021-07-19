@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  elasticsearch:
+    container_name: aluraflix_es
+    image: elasticsearch:7.13.3
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      - discovery.type=single-node
