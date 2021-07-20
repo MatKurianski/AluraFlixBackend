@@ -7,7 +7,7 @@ AluraFlix é um projeto da Alura Challenge Back-End, onde será construído uma 
 | Nome          |Versão         |
 | ------------- |:-------------:|
 | Kotlin        |   1.5.20      |
-| Spring        |   2.5.2       |
+| Spring Boot   |   2.5.2       |
 | ElasticSearch |   7.13.3      |
 
 ## Roadmap
